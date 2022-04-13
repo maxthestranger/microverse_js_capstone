@@ -1,7 +1,7 @@
 {
   "name": "microverse_js_capstone",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack",
@@ -36,5 +36,6 @@
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
-  }
+  },
+  "main": "webpack.config.js"
 }
