@@ -1,5 +1,5 @@
 import { getMeal } from './meals.js';
-import { getComment } from './comments.js';
+import { getComment, createComment } from './comments.js';
 
 const $MEAL_URL = 'https://www.themealdb.com/api/json/v1/1';
 const $COMMENT_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AOZoRz5A07eJZQABcENB';
@@ -69,8 +69,25 @@ export const handleModal = (e) => {
   renderComment($COMMENT_URL, mealId);
 
   modal.classList.add('show');
+  modal.dataset.id = mealId;
 };
 
 export const closeModal = () => {
   modal.classList.remove('show');
+};
+
+// create comment
+export const handleForm = (e) => {
+  const form = e.target;
+  e.preventDefault();
+  const obj = {
+    itemId: modal.dataset.id,
+    username: form.elements.username.value,
+    comment: form.elements.comment.value,
+  };
+
+  createComment(obj, $COMMENT_URL);
+
+  form.elements.username.value = '';
+  form.elements.comment.value = '';
 };

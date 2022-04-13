@@ -10,7 +10,7 @@ export const createComment = async ({ itemId, username, comment }, url) => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then((res) => res.json());
+  });
 };
 
 // getting comment
