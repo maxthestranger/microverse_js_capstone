@@ -30,7 +30,7 @@
   },
   "ignoreFiles": [
     "build/**",
-    "dist/**",
+    "docs/**",
     "**/reset*.css",
     "**/bootstrap*.css",
     "**/*.js",
