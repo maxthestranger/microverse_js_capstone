@@ -43,6 +43,10 @@ header{
   font-size:26px;
 }
 
+.logo p{
+  color: var( --primary);
+}
+
 .nav-links{
   display: flex;
   align-items: center;
