@@ -123,15 +123,40 @@ textarea::placeholder {
   width: 100%;
   display: flex;
   position: relative;
+  margin-top: 150px;;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 1000px;
   width: 100%;
-  margin: 0 5%;
+  margin: 0 auto;
 }
 
 /* modal */
+.meal-container{
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  width:100%;
+  flex-wrap: wrap;
+  gap:35px;
+  margin-bottom:60px;
+}
+
+.meal{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:30%;
+  gap:15px;
+}
+
+.meal-btn{
+  align-self: center;
+  margin-left:0 !important;
+}
+
 .modal {
   position: absolute;
   width: 100%;

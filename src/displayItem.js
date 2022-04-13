@@ -1,5 +1,6 @@
-import { getMeal } from './meals.js';
+import { getMeal, getAllMeals } from './meals.js';
 import { getComment, createComment } from './comments.js';
+
 
 const $MEAL_URL = 'https://www.themealdb.com/api/json/v1/1';
 const $COMMENT_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AOZoRz5A07eJZQABcENB';
@@ -91,3 +92,22 @@ export const handleForm = (e) => {
   form.elements.username.value = '';
   form.elements.comment.value = '';
 };
+
+export const displayMeal = () => {
+  getAllMeals($MEAL_URL).then((data) =>{
+    const mealsNumber = document.querySelector('.meals-number');
+    mealsNumber.innerHTML = `${data.length} Meal(s) found!`
+    const container = document.querySelector('.meal-container');
+    data.map(meal => {
+      const div = document.createElement('div');
+      div.classList.add('meal')
+      div.innerHTML = `
+      <img src="${meal.strMealThumb}" alt="mealPicture>
+      <h3 class="meal-title">${meal.strMeal}</h3>
+      <button class="btn meal-btn" data-id=${meal.idMeal}>comment</button> `
+      container.appendChild(div);
+    })
+   
+   
+  });
+}
