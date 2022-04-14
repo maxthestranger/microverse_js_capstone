@@ -15,12 +15,7 @@ export const createComment = async ({ itemId, username, comment }, url) => {
 
 // getting comment
 export const getComment = async (url, id) => {
-  let data = null;
-  await fetch(`${url}/comments?item_id=${id}`)
-    .then((res) => res.json())
-    .then((d) => {
-      data = d;
-    });
+  const data = await fetch(`${url}/comments?item_id=${id}`).then((res) => res.json());
 
   return data;
 };

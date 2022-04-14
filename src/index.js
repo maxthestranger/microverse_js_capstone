@@ -1,7 +1,9 @@
 import '../node_modules/boxicons/css/boxicons.min.css';
 import './style.css';
 import Icon from '../images/logo.svg';
-import { handleModal, closeModal, handleForm, displayMeal } from './displayItem.js';
+import {
+  handleModal, closeModal, handleForm, displayMeal,
+} from './displayItem.js';
 
 const logo = document.querySelector('.logo');
 const myIcon = new Image();

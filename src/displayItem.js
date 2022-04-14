@@ -1,11 +1,11 @@
 import { getMeal, getAllMeals } from './meals.js';
 import { getComment, createComment } from './comments.js';
 
-
 const $MEAL_URL = 'https://www.themealdb.com/api/json/v1/1';
 const $COMMENT_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AOZoRz5A07eJZQABcENB';
 
 const modal = document.querySelector('.modal');
+const body = document.querySelector('body');
 
 // render Meal
 const renderMeal = (id, url) => getMeal(id, url).then((meal) => {
@@ -47,7 +47,8 @@ const renderMeal = (id, url) => getMeal(id, url).then((meal) => {
 const renderComment = (url, id) => getComment(url, id).then((data) => {
   const commentDiv = document.querySelector('.comments');
   const com = document.createElement('div');
-  com.innerHTML = `
+  if (data.length) {
+    com.innerHTML = `
         <div class="my-2 fs-20">Comments (${data.length})</div>
           <ul class="comment">
             ${data.map(
@@ -55,9 +56,12 @@ const renderComment = (url, id) => getComment(url, id).then((data) => {
                 <em>${comment.creation_date}:</em>
                 <span>${comment.username}</span> <i>--></i> ${comment.comment}
               </li>`,
-  )}
+  ).join('')}
           </ul>
         `;
+  } else {
+    com.innerHTML = 'No comments yet!';
+  }
   commentDiv.innerHTML = '';
   commentDiv.appendChild(com);
 });
@@ -69,12 +73,12 @@ export const handleModal = (e) => {
   renderMeal(mealId, $MEAL_URL);
   renderComment($COMMENT_URL, mealId);
 
-  modal.classList.add('show');
+  body.classList.add('show');
   modal.dataset.id = mealId;
 };
 
 export const closeModal = () => {
-  modal.classList.remove('show');
+  body.classList.remove('show');
 };
 
 // create comment
@@ -94,20 +98,18 @@ export const handleForm = (e) => {
 };
 
 export const displayMeal = () => {
-  getAllMeals($MEAL_URL).then((data) =>{
+  getAllMeals($MEAL_URL).then((data) => {
     const mealsNumber = document.querySelector('.meals-number');
-    mealsNumber.innerHTML = `${data.length} Meal(s) found!`
+    mealsNumber.innerHTML = `${data.length} Meal(s) found!`;
     const container = document.querySelector('.meal-container');
-    data.map(meal => {
+    data.forEach((meal) => {
       const div = document.createElement('div');
-      div.classList.add('meal')
+      div.classList.add('meal');
       div.innerHTML = `
       <img src="${meal.strMealThumb}" alt="mealPicture>
       <h3 class="meal-title">${meal.strMeal}</h3>
-      <button class="btn meal-btn" data-id=${meal.idMeal}>comment</button> `
+      <button class="btn meal-btn modal-btn" data-id=${meal.idMeal}>comment</button> `;
       container.appendChild(div);
-    })
-   
-   
+    });
   });
-}
+};

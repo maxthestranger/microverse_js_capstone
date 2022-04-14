@@ -32,6 +32,10 @@ body {
   color: var(--dark);
 }
 
+body.show {
+  overflow: hidden;
+}
+
 /* header */
 
 header {
@@ -123,7 +127,7 @@ textarea::placeholder {
   width: 100%;
   display: flex;
   position: relative;
-  margin-top: 150px;;
+  margin-top: 100px;
 }
 
 .container {
@@ -133,32 +137,36 @@ textarea::placeholder {
 }
 
 /* modal */
-.meal-container{
+.meal-container {
   display: flex;
   align-items: center;
-  justify-content:space-around;
-  width:100%;
+  justify-content: space-around;
+  width: 100%;
   flex-wrap: wrap;
-  gap:35px;
-  margin-bottom:60px;
+  gap: 35px;
+  margin-bottom: 60px;
 }
 
-.meal{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  width:30%;
-  gap:15px;
+.meal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  gap: 15px;
 }
 
-.meal-btn{
+.meal img {
+  border-radius: var(--radius);
+}
+
+.meal-btn {
   align-self: center;
-  margin-left:0 !important;
+  margin-left: 0 !important;
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 10;
   background: rgba(0, 0, 0, 0.6);
@@ -168,9 +176,10 @@ textarea::placeholder {
   display: none;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 
-.show {
+.show .modal {
   display: flex;
 }
 
@@ -179,7 +188,7 @@ textarea::placeholder {
   width: 60%;
   border-radius: var(--radius);
   max-height: 100vh;
-  overflow-y: auto;
+  margin-top: 50px;
 }
 
 .modal-header {
