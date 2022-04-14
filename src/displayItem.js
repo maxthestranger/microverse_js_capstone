@@ -1,5 +1,6 @@
 import { getMeal, getAllMeals } from './meals.js';
 import { getComment, createComment } from './comments.js';
+import Like from '../images/like1.svg';
 
 
 const $MEAL_URL = 'https://www.themealdb.com/api/json/v1/1';
@@ -106,6 +107,11 @@ export const displayMeal = () => {
       <h3 class="meal-title">${meal.strMeal}</h3>
       <button class="btn meal-btn" data-id=${meal.idMeal}>comment</button> `
       container.appendChild(div);
+
+      const myLike = new Image();
+      myLike.src = Like;
+      myLike.classList.add('likeBtn');
+      div.appendChild(myLike);
     })
    
    

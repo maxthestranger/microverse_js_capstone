@@ -7,23 +7,59 @@
     <title>Food Network</title>
   <script defer src="main.js"></script></head>
   <body>
-    <!-- TODO: header -->
+    <!-- header -->
     <header>
       <div class="logo">
-        <img src="../images/logo.svg" alt="logo">
         <p>foodyhub</p>
       </div>
       <div class="nav-links">
-        <a href="#">
-        <!--number of items on the home page will be generated dynamically--> Meal(s) found!
+        <a  class="meals-number" href="#">
+          <!--number of items on the home page will be generated dynamically-->
+          
         </a>
-        <a href="#">
-          View more
-        </a>
+        <a href="#"> View more </a>
       </div>
     </header>
+
     <!-- content sections -->
-    <main class="main"></main>
+    <main class="main">
+      <div class="container">
+      <div class="meal-container">
+<img src="../images/like1.svg" alt="like Button">
+      </div>
+    </div>
+    </main>
+
+    <!-- modal -->
+    <section class="modal">
+      <div>
+        <div class="modal-header">
+          <i class="bx bx-x"></i>
+        </div>
+        <div class="modal-body">
+          <div class="meals"></div>
+          <div class="comments"></div>
+
+          <div class="my-2 fs-20">Add a comment</div>
+          <form>
+            <div class="form-group">
+              <input type="text" name="username" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="comment"
+                cols="30"
+                rows="10"
+                placeholder="Your Insights"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn">comment</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <!-- footer -->
     <footer class="footer">

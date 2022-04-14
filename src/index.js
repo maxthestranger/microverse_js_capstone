@@ -1,12 +1,14 @@
 import '../node_modules/boxicons/css/boxicons.min.css';
 import './style.css';
 import Icon from '../images/logo.svg';
+
 import { handleModal, closeModal, handleForm, displayMeal } from './displayItem.js';
 
 const logo = document.querySelector('.logo');
 const myIcon = new Image();
 myIcon.src = Icon;
 logo.appendChild(myIcon);
+
 
 const modal = document.querySelector('.modal');
 const main = document.querySelector('.main');
