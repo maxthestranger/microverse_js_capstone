@@ -11,8 +11,10 @@ export const getMeal = async (mealId, url) => {
 
 export const getAllMeals = async (url) => {
   let data = null;
-  await fetch(`${url}/filter.php?i=chicken_breast`).then((res) => res.json()).then((d) =>{
-    data = d.meals;
-  });
+  await fetch(`${url}/filter.php?i=chicken_breast`)
+    .then((res) => res.json())
+    .then((d) => {
+      data = d.meals;
+    });
   return data;
 };

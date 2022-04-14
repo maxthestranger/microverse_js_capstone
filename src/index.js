@@ -1,8 +1,13 @@
 import '../node_modules/boxicons/css/boxicons.min.css';
 import './style.css';
 import Icon from '../images/logo.svg';
-import {addLike} from './likes.js';
-import { handleModal, closeModal, handleForm, displayMeal } from './displayItem.js';
+import {
+  handleModal,
+  closeModal,
+  handleForm,
+  displayMeal,
+  handleLikes,
+} from './displayItem.js';
 
 const logo = document.querySelector('.logo');
 const myIcon = new Image();
@@ -12,7 +17,7 @@ logo.appendChild(myIcon);
 const modal = document.querySelector('.modal');
 const main = document.querySelector('.main');
 const form = document.querySelector('form');
-
+const mealContainer = document.querySelector('.meal-container');
 
 window.addEventListener('DOMContentLoaded', () => {
   // render all meals
@@ -22,10 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (e.target.className.includes('modal-btn')) {
       handleModal(e);
     }
-    if(e.target.className.includes('likeBtn')){
-      addLike();
-    }
-    
   });
 
   // close modal
@@ -39,9 +40,11 @@ window.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', (e) => {
     handleForm(e);
   });
-  
 
-  
+  // create like
+  mealContainer.addEventListener('click', (e) => {
+    if (e.target.className.includes('likeBtn')) {
+      handleLikes(e);
+    }
+  });
 });
-
-

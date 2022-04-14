@@ -124,7 +124,7 @@ textarea::placeholder {
   width: 100%;
   display: flex;
   position: relative;
-  margin-top: 150px;;
+  margin-top: 150px;
 }
 
 .container {
@@ -134,42 +134,42 @@ textarea::placeholder {
 }
 
 /* modal */
-.meal-container{
+.meal-container {
   display: flex;
   align-items: center;
-  justify-content:space-around;
-  width:100%;
+  justify-content: space-around;
+  width: 100%;
   flex-wrap: wrap;
-  gap:35px;
-  margin-bottom:60px;
+  gap: 35px;
+  margin-bottom: 60px;
 }
 
-.meal{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  width:30%;
-  gap:15px;
+.meal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  gap: 15px;
 }
 
-.likeBtn{
-  width:30px;
-  height:30px;
-  cursor:pointer;
+.likeBtn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
-.likeBtn:hover{
+.likeBtn:hover {
   opacity: 0.7;
 }
 
-.likeBtn:active{
-  opacity: 1; 
+.likeBtn:active {
+  opacity: 1;
 }
 
-.meal-btn{
+.meal-btn {
   align-self: center;
-  margin-left:0 !important;
+  margin-left: 0 !important;
 }
 
 .modal {
