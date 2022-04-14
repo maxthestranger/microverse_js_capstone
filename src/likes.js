@@ -24,4 +24,13 @@ export const createLike = async ({ itemId, username, comment }, url) => {
   
     return data;
   };
-  
+
+
+  export const addLike = () => {
+    let count = 0 ;
+      count++;
+      const likes = document.querySelector('.likeNumber');
+      likes.innerHTML =`${count} like(s)!`;
+  }
+ 
+    

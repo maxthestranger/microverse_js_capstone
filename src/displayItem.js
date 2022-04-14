@@ -102,18 +102,20 @@ export const displayMeal = () => {
     data.map(meal => {
       const div = document.createElement('div');
       div.classList.add('meal')
+      const count = 0;
       div.innerHTML = `
       <img src="${meal.strMealThumb}" alt="mealPicture>
       <h3 class="meal-title">${meal.strMeal}</h3>
-      <button class="btn meal-btn" data-id=${meal.idMeal}>comment</button> `
+      <button class="btn meal-btn" data-id=${meal.idMeal}>comment</button>
+      <p class="likeNumber"> ${count} like(s)!</p> `
       container.appendChild(div);
 
       const myLike = new Image();
       myLike.src = Like;
       myLike.classList.add('likeBtn');
       div.appendChild(myLike);
+     
+      });
+      
     })
-   
-   
-  });
-}
+  }

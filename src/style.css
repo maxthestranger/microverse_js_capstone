@@ -48,6 +48,7 @@ header {
   padding-left: 170px;
   padding-top: 15px;
   font-size: 26px;
+  cursor: pointer;
 }
 
 .logo p {
