@@ -52,6 +52,7 @@ header {
   padding-left: 170px;
   padding-top: 15px;
   font-size: 26px;
+  cursor: pointer;
 }
 
 .logo p {
@@ -158,6 +159,20 @@ textarea::placeholder {
 
 .meal img {
   border-radius: var(--radius);
+}
+
+.likeBtn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.likeBtn:hover {
+  opacity: 0.7;
+}
+
+.likeBtn:active {
+  opacity: 1;
 }
 
 .meal-btn {
