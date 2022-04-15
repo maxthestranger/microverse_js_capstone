@@ -14,7 +14,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://maxthestranger.github.io/microverse_leaderboard/) _available once merged to main_
+[Live Demo Link](https://maxthestranger.github.io/microverse_js_capstone/)
 
 ## Getting Started
 
