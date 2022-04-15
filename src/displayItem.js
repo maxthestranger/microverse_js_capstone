@@ -87,18 +87,24 @@ export const closeModal = () => {
 
 // create comment
 export const handleForm = (e) => {
-  const form = e.target;
   e.preventDefault();
+  const form = e.target;
+  const mealId = modal.dataset.id;
   const obj = {
-    itemId: modal.dataset.id,
+    itemId: mealId,
     username: form.elements.username.value,
     comment: form.elements.comment.value,
   };
 
-  createComment(obj, $COMMENT_URL);
-
-  form.elements.username.value = '';
-  form.elements.comment.value = '';
+  if (obj.username !== '' && obj.comment !== '') {
+    createComment(obj, $COMMENT_URL).then((data) => {
+      if (data.status === 201) {
+        renderComment($COMMENT_URL, mealId);
+      }
+    });
+    form.elements.username.value = '';
+    form.elements.comment.value = '';
+  }
 };
 
 export const displayMeal = () => {

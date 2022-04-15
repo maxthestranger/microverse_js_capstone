@@ -1,6 +1,6 @@
 // create comment
 export const createComment = async ({ itemId, username, comment }, url) => {
-  await fetch(`${url}/comments`, {
+  const data = await fetch(`${url}/comments`, {
     method: 'POST',
     body: JSON.stringify({
       item_id: itemId,
@@ -11,6 +11,8 @@ export const createComment = async ({ itemId, username, comment }, url) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
+
+  return data;
 };
 
 // getting comment

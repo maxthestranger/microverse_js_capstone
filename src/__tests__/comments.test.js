@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 
-// create comment
-describe('comments', () => {
-  test('add new comment', () => {});
+describe('counter', () => {
+  test('counter increments by 1 when like button clicked', () => {});
 });
